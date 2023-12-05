@@ -1,15 +1,30 @@
 import { Delete } from "@mui/icons-material";
 import { Box, Checkbox, IconButton, Typography } from "@mui/material";
 import React from "react";
+import { deleteTask, updateTaskStatus } from "../store/taskListSlice";
+import { useDispatch } from "react-redux";
 
-const Task = () => {
+const Task = ({ task, index }) => {
+  console.log("render Task");
+
+  const dispatch = useDispatch();
+
+  const updateTask = () => {
+    dispatch(updateTaskStatus({ index: index }));
+  };
+
   return (
-    <Box display={"flex"} alignItems={"center"} bgcolor={"#efefef"}>
-      <Checkbox size="medium" color="success" />
+    <Box display={"flex"} alignItems={"center"}>
+      <Checkbox
+        size="medium"
+        color="success"
+        checked={task.completed}
+        onClick={updateTask}
+      />
       <Typography variant="h6" fontWeight={400} color={"#000"} flexGrow={1}>
-        Testando
+        {task.title}
       </Typography>
-      <IconButton>
+      <IconButton onClick={() => dispatch(deleteTask({ index: index }))}>
         <Delete />
       </IconButton>
     </Box>

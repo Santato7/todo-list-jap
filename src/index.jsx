@@ -1,10 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import App from "./App";
+
+import "./index.css";
+
 import { ThemeProvider, createTheme } from "@mui/material";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Home } from "./pages/Home";
+import { Provider } from "react-redux";
+
+import store from "./store/store";
 
 const router = createBrowserRouter([
   {
@@ -33,8 +38,10 @@ const theme = createTheme({
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <RouterProvider router={router} />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </Provider>
   </React.StrictMode>
 );
