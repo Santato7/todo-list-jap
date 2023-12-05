@@ -1,9 +1,13 @@
 import AddIcon from "@mui/icons-material/Add";
 import { Box, Button, Container } from "@mui/material";
 import React from "react";
-import TaskList from "../components/TaskList";
+import TaskList from "../components/List";
+import { useSelector } from "react-redux";
+import Task from "../components/Task";
 
 export const Home = () => {
+  const taskList = useSelector((state) => state.taskList.value);
+
   return (
     <Container
       maxWidth={"md"}
@@ -26,7 +30,11 @@ export const Home = () => {
         >
           New Task
         </Button>
-        <TaskList />
+        <TaskList title="Tasks List">
+          {taskList.map((task, index) => (
+            <Task key={index} task={task} index={index} />
+          ))}
+        </TaskList>
       </Box>
     </Container>
   );
