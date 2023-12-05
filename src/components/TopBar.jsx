@@ -11,17 +11,12 @@ export default function TopBar() {
         alignItems: "center",
       }}
     >
-      <Typography
-        variant="caption"
-        fontSize={"22px"}
-        fontWeight={400}
-        padding={"10px"}
-      >
+      <Typography variant="caption" fontSize={22} fontWeight={400} padding={2}>
         Todos Manager
       </Typography>
       <Box display={"flex"} alignItems={"center"} paddingRight={"30px"}>
         <Switch color="default" />
-        <Typography width={"100px"} textAlign={"center"}>
+        <Typography width={"100px"} textAlign={"center"} fontSize={16}>
           Showing Only Completed
         </Typography>
       </Box>

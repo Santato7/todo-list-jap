@@ -1,6 +1,7 @@
 import AddIcon from "@mui/icons-material/Add";
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box, Button, Container } from "@mui/material";
 import React from "react";
+import TaskList from "../components/TaskList";
 
 export const Home = () => {
   return (
@@ -8,18 +9,24 @@ export const Home = () => {
       maxWidth={"md"}
       sx={{
         display: "flex",
-        marginTop: "20px",
+        marginTop: 2,
       }}
     >
-      <Box width={"100%"} display={"flex"} alignItems={"center"}>
-        <Button variant="contained" endIcon={<AddIcon />}>
+      <Box
+        width={"100%"}
+        display={"flex"}
+        flexDirection={"column"}
+        alignItems={"center"}
+        gap={1}
+      >
+        <Button
+          variant="contained"
+          endIcon={<AddIcon />}
+          sx={{ borderRadius: 0 }}
+        >
           New Task
         </Button>
-        <Box maxWidth={"100%"} textAlign={"center"} bgcolor={"primary.main"}>
-          <Typography variant="h5" color={"#fff"}>
-            Tasks List
-          </Typography>
-        </Box>
+        <TaskList />
       </Box>
     </Container>
   );
