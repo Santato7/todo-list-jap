@@ -1,8 +1,8 @@
 import React from "react";
 import { Box, Container, Typography } from "@mui/material";
 
-const TaskList = ({ children, title }) => {
-  console.log("render TaskList");
+const List = ({ children, title }) => {
+  console.log("render List");
 
   return (
     <Container>
@@ -18,4 +18,4 @@ const TaskList = ({ children, title }) => {
   );
 };
 
-export default TaskList;
+export default List;

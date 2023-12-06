@@ -10,6 +10,7 @@ import { Home } from "./pages/Home";
 import { Provider } from "react-redux";
 
 import store from "./store/store";
+import NewTask from "./pages/NewTask";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/newtask",
+        element: <NewTask />,
       },
     ],
   },

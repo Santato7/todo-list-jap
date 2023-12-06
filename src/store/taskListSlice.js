@@ -19,6 +19,12 @@ export const taskListSlice = createSlice({
       state.value[action.payload.index].completed =
         !state.value[action.payload.index].completed;
     },
+    updateTask: (state, action) => {
+      state.value[action.payload.index] = {
+        ...state.value[action.payload.index],
+        ...action.payload,
+      };
+    },
   },
 });
 

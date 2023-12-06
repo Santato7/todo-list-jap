@@ -9,17 +9,13 @@ const Task = ({ task, index }) => {
 
   const dispatch = useDispatch();
 
-  const updateTask = () => {
-    dispatch(updateTaskStatus({ index: index }));
-  };
-
   return (
     <Box display={"flex"} alignItems={"center"}>
       <Checkbox
         size="medium"
         color="success"
         checked={task.completed}
-        onClick={updateTask}
+        onClick={() => dispatch(updateTaskStatus({ index: index }))}
       />
       <Typography variant="h6" fontWeight={400} color={"#000"} flexGrow={1}>
         {task.title}
