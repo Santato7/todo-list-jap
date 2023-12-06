@@ -2,8 +2,6 @@ import React from "react";
 import { Box, Container, Typography } from "@mui/material";
 
 const List = ({ children, title }) => {
-  console.log("render List");
-
   return (
     <Container>
       <Box textAlign={"center"} bgcolor={"primary.main"} padding={1}>

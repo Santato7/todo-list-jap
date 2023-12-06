@@ -10,14 +10,10 @@ export const Home = () => {
   const taskList = useSelector((state) => state.taskList.value);
 
   return (
-    <Container
-      maxWidth={"md"}
-      sx={{
-        marginTop: 2,
-      }}
-    >
+    <Container maxWidth={"md"}>
       <Box
         width={"100%"}
+        marginTop={1}
         display={"flex"}
         flexDirection={"column"}
         alignItems={"center"}
