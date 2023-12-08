@@ -5,7 +5,7 @@ const List = ({ children, title }) => {
   return (
     <Container>
       <Box textAlign={"center"} bgcolor={"primary.main"} padding={1}>
-        <Typography variant="h5" color={"#fff"}>
+        <Typography variant="h5" component="h1" color={"#fff"}>
           {title}
         </Typography>
       </Box>

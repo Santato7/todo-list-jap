@@ -1,7 +1,14 @@
 import { Box, Dialog, DialogContent, Typography } from "@mui/material";
 import React from "react";
 
-const Modal = ({ children, open, onClose, title, prompt, modalSize }) => {
+const Modal = ({
+  children,
+  open,
+  onClose,
+  title,
+  prompt,
+  modalSize = "sm",
+}) => {
   return (
     <Dialog open={open} onClose={onClose} maxWidth={modalSize} fullWidth>
       <DialogContent>

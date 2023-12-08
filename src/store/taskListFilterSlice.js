@@ -6,12 +6,12 @@ export const taskListFilterSlice = createSlice({
     value: false,
   },
   reducers: {
-    toggleListFilter: (state) => {
-      state.value = !state.value;
+    changeListFilter: (state, action) => {
+      state.value = action.payload;
     },
   },
 });
 
-export const { toggleListFilter } = taskListFilterSlice.actions;
+export const { changeListFilter } = taskListFilterSlice.actions;
 
 export default taskListFilterSlice.reducer;

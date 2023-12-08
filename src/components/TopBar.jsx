@@ -1,7 +1,7 @@
 import { AppBar, Box, Switch, Typography } from "@mui/material";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleListFilter } from "../store/taskListFilterSlice";
+import { changeListFilter } from "../store/taskListFilterSlice";
 import { Link } from "react-router-dom";
 
 export default function TopBar() {
@@ -31,7 +31,7 @@ export default function TopBar() {
         <Switch
           color="default"
           checked={filtered}
-          onClick={() => dispatch(toggleListFilter())}
+          onChange={(event) => dispatch(changeListFilter(event.target.checked))}
         />
         <Typography width={"100px"} textAlign={"center"} fontSize={16}>
           {filtered ? "Showing Only Completed" : "Showing All Tasks"}

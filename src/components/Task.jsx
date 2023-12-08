@@ -27,7 +27,13 @@ const Task = ({ task, index }) => {
         checked={task.completed}
         onClick={() => dispatch(updateTaskStatus({ index: index }))}
       />
-      <Typography variant="h6" fontWeight={400} color={"#000"} flexGrow={1}>
+      <Typography
+        variant="h6"
+        component="p"
+        fontWeight={400}
+        color={"#000"}
+        flexGrow={1}
+      >
         {task.title}
       </Typography>
       <IconButton onClick={handleModal}>

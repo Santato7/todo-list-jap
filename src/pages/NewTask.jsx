@@ -33,9 +33,12 @@ const NewTask = () => {
         justifyItems={"center"}
         gap={1}
       >
-        <Typography variant="h4">New Task</Typography>
+        <Typography variant="h4" component="h1">
+          New Task
+        </Typography>
         <TextField
           variant="outlined"
+          placeholder="Enter the task title"
           fullWidth
           size="small"
           onChange={handleInputChange}

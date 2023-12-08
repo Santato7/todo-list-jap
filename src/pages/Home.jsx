@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 
 export const Home = () => {
   const taskList = useSelector((state) => state.taskList.value);
+  const taskListFilter = useSelector((state) => state.taskListFilter.value);
 
   return (
     <Container maxWidth={"md"}>
@@ -29,9 +30,13 @@ export const Home = () => {
           </Button>
         </Link>
         <List title="Tasks List">
-          {taskList.map((task, index) => (
-            <Task key={index} task={task} index={index} />
-          ))}
+          {taskList.map((task, index) =>
+            taskListFilter ? (
+              task.completed && <Task key={index} task={task} index={index} />
+            ) : (
+              <Task key={index} task={task} index={index} />
+            )
+          )}
         </List>
       </Box>
     </Container>
